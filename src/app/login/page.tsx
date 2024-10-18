@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { Suspense } from 'react'
 import { LoginPage } from '@/components/login'
 import '@/css/signIn.scss'
 
@@ -8,6 +8,8 @@ import '@/css/signIn.scss'
 export default function register() {
 
   return (
-    <LoginPage />
+    <Suspense>
+      <LoginPage />
+    </Suspense>
   )
 }
