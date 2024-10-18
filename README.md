@@ -5,6 +5,8 @@
 
 AEGIS is an authentication module for seamless password-free authentication flow using passkeys. 
 
+Demo: [AEGIS - Passkey Authentication Demo](https://aegis-auth.vercel.app)
+
 #### Features
 - <b>Password-Free Logins:</b> AEGIS eliminates the need for traditional passwords, simplifying the login process.
 - <b>Familiar and Convenient:</b> Users can register and sign in using their device authenticators, such as PINs, biometric scanners and hardware authentication keys.
