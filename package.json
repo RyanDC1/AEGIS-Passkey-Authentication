@@ -1,0 +1,38 @@
+{
+  "name": "passkey-authentication",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 8080",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "@hapi/iron": "^7.0.1",
+    "@simplewebauthn/browser": "^10.0.0",
+    "@simplewebauthn/server": "^10.0.1",
+    "antd": "^5.21.4",
+    "dayjs": "^1.11.13",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.7.1",
+    "next": "14.2.15",
+    "next-nprogress-bar": "^2.3.14",
+    "next13-progressbar": "^1.2.2",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "@simplewebauthn/types": "^10.0.0",
+    "@types/lodash": "^4.17.10",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
+    "sass": "^1.79.5",
+    "typescript": "^5"
+  }
+}

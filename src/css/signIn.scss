@@ -1,0 +1,78 @@
+@use 'variables.scss' as variables;
+
+.sign-in-layout {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background: url('/images/MAIN_BG.jpg');
+    background-size: cover;
+
+    .sign-in-card {
+        background: url('/images/CARD_BG.jpg');
+        background-size: cover;
+        width: 550px;
+        transform: translate(0, 20%);
+        height: fit-content;
+        .logo {
+            max-width: 250px;
+        }
+
+        .ant-card-body {
+            box-shadow: 0px 0px 8px 2px rgb(255 255 255 / 63%);
+            border-radius: 6px;
+            text-align: center;
+            padding-bottom: 8px;
+        }
+
+        .ant-form {
+            text-align: initial;
+        }
+
+        .actions {
+            padding-top: 8px;
+        }
+    }
+    @media screen and (max-width: 1440px) {
+        .sign-in-card {
+            width: 40%;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .sign-in-card {
+            width: 50%;
+        }
+    }
+    
+    @media screen and (max-width: 800px) {
+        .sign-in-card {
+            width: 80%;
+            .logo {
+                max-width: 150px;
+            }
+            .header-title {
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    .ant-float-btn {
+        transition: all 0.3s ease-in-out;
+        &:not(:hover) {
+            opacity: 0.4;
+        }
+    }
+}
+
+.help-modal {
+    .ant-modal-content {
+        img {
+            width: 60%;
+            object-fit: contain;
+        }
+
+        .help-content {
+            font-size: 16px !important;
+        }
+    }
+}

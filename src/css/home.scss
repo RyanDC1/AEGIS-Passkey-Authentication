@@ -1,0 +1,53 @@
+$header-height: 64px;
+
+.main-layout {
+    background: url('/images/HOME_BG.jpg') !important;
+    background-size: cover !important;
+    .ant-layout-header {
+        padding: 0 24px;
+        padding-top: 8px;
+        background: transparent;
+        height: $header-height !important;
+        z-index: 2;
+
+        .ant-flex,
+        .logo,
+        .ant-space-item,
+        .ant-space-item img {
+            height: inherit;
+        }
+    }
+
+    .ant-layout-content {
+        height: calc(100vh - $header-height);
+        overflow-y: scroll;
+
+        .ant-card {
+            margin: 45px;
+            text-align: center;
+        }
+
+        .ant-card-cover {
+            padding: 24px;
+
+            img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        .card-description {
+            .ant-typography {
+                font-size: 16px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .ant-layout-header {
+        .header-title {
+            display: none;
+        }
+    }
+}
