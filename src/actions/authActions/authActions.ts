@@ -36,7 +36,8 @@ export async function register(username: string) {
         rpName: 'aegis-auth',
         rpID: hostName,
         userName: user.username,
-
+        timeout: 300000,
+        userDisplayName: user.username,
         // exclude existing passkeys
         excludeCredentials: user.passkeys.map(passkey => ({
             id: passkey.id
@@ -150,6 +151,7 @@ export async function login(username: string) {
     const hostName = await getHostName()
     const options = await generateAuthenticationOptions({
         rpID: hostName,
+        timeout: 300000,
         // Require users to use a previously-registered authenticator
         allowCredentials: user.passkeys.map(passkey => ({
             id: passkey.id,
