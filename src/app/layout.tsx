@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Seamless Passkey Authentication using WebAuthn API",
   creator: 'Ryan Da Costa',
   openGraph: {
-    images: 'https://aegis-auth.vercel.app/images/AEGIS_LOGO_DARK.png',
+    images: '/images/AEGIS_LOGO_DARK.png',
     title: 'AEGIS AUTH - Seamless Passkey Authentication',
     description: 'AEGIS is an authentication module for seamless password-free authentication flow using passkeys.'
   }
