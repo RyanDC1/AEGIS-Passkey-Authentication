@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { LoginPage } from '@/components/login'
 import Image from 'next/image'
 import '@/css/signIn.scss'
@@ -13,7 +13,9 @@ export default function register() {
         fill
         alt="home-background"
       />
-      <LoginPage />
+      <Suspense>
+        <LoginPage />
+      </Suspense>
     </>
   )
 }
