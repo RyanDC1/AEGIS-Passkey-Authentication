@@ -12,6 +12,7 @@ export default function register() {
         src={'/images/MAIN_BG.jpg'}
         fill
         alt="home-background"
+        quality={100}
       />
       <RegistrationPage />
     </>
