@@ -10,6 +10,7 @@ import { startAuthentication } from '@simplewebauthn/browser'
 import { getServerError } from '@/utils/helpers'
 import { useSearchParams } from 'next/navigation'
 import LoginHelp from './LoginHelp'
+import { ServerError } from '@/models'
 
 
 type Props = {}
@@ -110,10 +111,21 @@ export default function LoginPage({ }: Props) {
                 const { userName } = values
 
                 // get challenge from the server
-                const challenge = await login(userName)
+                const { challenge, isValid, error } = await login(userName)
+
+                if(!isValid) {
+                    form.setFields([
+                        {
+                            name: 'userName',
+                            errors: [error!]
+                        }
+                    ])
+                    setLoading(false)
+                    return
+                }
 
                 // get solved challenge from the browser
-                const signedChallenge = await startAuthentication(challenge)
+                const signedChallenge = await startAuthentication(challenge!)
 
                 //verify solved challenge
                 await verifyLogin(signedChallenge)

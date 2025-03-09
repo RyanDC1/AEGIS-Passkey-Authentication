@@ -6,7 +6,7 @@ import { generateAuthenticationOptions, generateRegistrationOptions, verifyAuthe
 import { AuthenticationResponseJSON, RegistrationResponseJSON } from '@simplewebauthn/types'
 import { cookies } from "next/headers"
 import { decrypt, encrypt, getHostName } from "../commonActions"
-import { AuthenticationSession, AuthSession, Passkeys, RegistrationSession } from "@/models"
+import { AuthenticationSession, AuthSession, LoginResponse, Passkeys, RegistrationSession } from "@/models"
 import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies"
 import { Cookie } from "@/utils/constants"
 import { serverError } from "@/utils/helpers"
@@ -133,7 +133,7 @@ export async function verifyRegistration(response: RegistrationResponseJSON) {
     }
 }
 
-export async function login(username: string) {
+export async function login(username: string) : Promise<LoginResponse> {
     await connectToDB()
 
     const response = await userModel.findOne({ 
@@ -141,9 +141,11 @@ export async function login(username: string) {
     })
 
     if (!response) {
-        throw serverError('User not registered', {
-            property: 'userName'
-        })
+        return {
+            isValid: false,
+            challenge: null,
+            error: 'User is not registered'
+        }
     }
 
     const user = response.toJSON()
@@ -172,7 +174,10 @@ export async function login(username: string) {
     const sessionData = await encrypt(session)
     cookies().set(Cookie.LOGIN_SESSION, sessionData, cookieOptions)
 
-    return options
+    return {
+        isValid: true,
+        challenge: options
+    }
 }
 
 /**

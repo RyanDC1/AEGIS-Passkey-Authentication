@@ -14,3 +14,9 @@ export interface AuthenticationSession {
 export interface AuthSession {
     user: Omit<User, 'passkeys'>
 }
+
+export interface LoginResponse {
+    isValid: boolean,
+    challenge: PublicKeyCredentialRequestOptionsJSON | null,
+    error?: string
+}
