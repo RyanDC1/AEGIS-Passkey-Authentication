@@ -1,15 +1,19 @@
-'use client'
-
-import React, { Suspense } from 'react'
+import React from 'react'
 import { LoginPage } from '@/components/login'
+import Image from 'next/image'
 import '@/css/signIn.scss'
 
 
 export default function register() {
 
   return (
-    <Suspense>
+    <>
+      <Image
+        src={'/images/MAIN_BG.jpg'}
+        fill
+        alt="home-background"
+      />
       <LoginPage />
-    </Suspense>
+    </>
   )
 }

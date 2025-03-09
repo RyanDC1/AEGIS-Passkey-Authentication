@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { Button, Dropdown, Flex, Layout, Space, Typography } from 'antd'

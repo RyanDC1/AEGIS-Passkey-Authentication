@@ -3,6 +3,7 @@
 import React from 'react'
 import MainLayout from '../layouts/MainLayout'
 import { Card, Flex, Space, Typography } from 'antd'
+import Image from 'next/image'
 
 type Props = {
     user: {
@@ -17,7 +18,15 @@ export default function HomePage({ user }: Props) {
             user={user}
         >
             <Card
-                cover={<img src='/images/LOGIN_SUCCESS.svg' alt='login-success' />}
+                cover={
+                    <Image 
+                        layout='responsive'
+                        width={732}
+                        height={636}
+                        src='/images/LOGIN_SUCCESS.svg' 
+                        alt='login-success' 
+                    />
+                }
             >
                 <div>
                     <Typography.Title level={2} style={{ margin: 0 }}>

@@ -4,8 +4,6 @@
     display: flex;
     justify-content: center;
     height: 100vh;
-    background: url('/images/MAIN_BG.jpg');
-    background-size: cover;
 
     .sign-in-card {
         background: url('/images/CARD_BG.jpg');
@@ -68,7 +66,7 @@
 .help-modal {
     .ant-modal-content {
         img {
-            width: 60%;
+            width: 60% !important;
             object-fit: contain;
         }
 

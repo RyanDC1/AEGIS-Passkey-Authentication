@@ -1,5 +1,6 @@
 import React from 'react'
 import { Flex, Modal, Typography } from 'antd'
+import Image from 'next/image'
 
 type Props = {
     open: boolean,
@@ -22,7 +23,13 @@ export default function HelpLayout(props: Props) {
             width={800}
         >
             <Flex align='center' vertical>
-                <img src={imgSrc} alt='help' />
+                <Image 
+                    layout='responsive'
+                    width={820}
+                    height={584}
+                    src={imgSrc} 
+                    alt='help' 
+                />
                 <Typography.Title level={3}>
                     {title}
                 </Typography.Title>

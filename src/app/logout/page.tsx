@@ -1,11 +1,12 @@
 'use client'
 
+import React, { useEffect } from 'react'
 import { logout } from '@/actions/authActions/authActions'
 import { APP_ROUTES } from '@/utils/constants'
 import { LoadingOutlined } from '@ant-design/icons'
 import { Card, Flex, Space, Spin, Typography } from 'antd'
 import { useRouter } from '@/contexts'
-import React, { useEffect } from 'react'
+import Image from 'next/image'
 
 export default function page() {
 
@@ -26,14 +27,22 @@ export default function page() {
                 boxShadow: '0px 0px 9px 2px #d1d1d157'
             }}
         >
-            <Flex justify='center' wrap>
+            <Flex justify='center' wrap gap={8}>
                 <Space>
-                    <Spin indicator={<LoadingOutlined style={{ top: 6 }}/>} />
+                    <Spin indicator={<LoadingOutlined style={{ top: 6 }} />} />
                     <Typography.Title level={4}>
                         Logging you out
                     </Typography.Title>
                 </Space>
-                <img width='50%' src='/images/LOGING_OUT.svg' alt='logout'/>
+                <div style={{ width: '50%' }}>
+                    <Image
+                        layout='responsive'
+                        width='888'
+                        height='484'
+                        src='/images/LOGING_OUT.svg'
+                        alt='logout'
+                    />
+                </div>
             </Flex>
         </Card>
     )
